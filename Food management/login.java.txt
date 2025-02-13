@@ -1,0 +1,60 @@
+package fooddonation.component.auth; import javax.swing.JOptionPane; import fooddonation.MainMenu; public class Login extends javax.swing.JFrame {     public Login() {         initComponents();         setDefaultUserName(); 
+    } 
+    private void setDefaultUserName() {         this.userNameField.setText("aishwarya");         this.passwordField.setText("aishwarya"); 
+    }                      
+    private void initComponents() {         loginPanel = new javax.swing.JPanel();         userNameLabel = new javax.swing.JLabel();         userNameField = new javax.swing.JTextField();         passwordLabel = new javax.swing.JLabel();         loginButton = new javax.swing.JButton();         passwordField = new javax.swing.JPasswordField();         jLabel1 = new javax.swing.JLabel(); 
+jLabel2 = new javax.swing.JLabel();         jLabel3 = new javax.swing.JLabel();         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());         loginPanel.setBackground(new java.awt.Color(246, 227, 207));         loginPanel.setBorder(new javax.swing.border.MatteBorder(null));         loginPanel.setForeground(new java.awt.Color(153, 153, 255));         loginPanel.setToolTipText("");         loginPanel.setName("");          loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());         userNameLabel.setBackground(new java.awt.Color(255, 153, 153));         userNameLabel.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N         userNameLabel.setText("User Name: ");         loginPanel.add(userNameLabel, new 
+org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 130, 40));         userNameField.addActionListener(new java.awt.event.ActionListener() {             public void actionPerformed(java.awt.event.ActionEvent evt) {                 userNameFieldActionPerformed(evt); 
+            } 
+        }); 
+        loginPanel.add(userNameField, new 
+org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 220, 30));         passwordLabel.setFont(new java.awt.Font("Baskerville Old Face", 1, 24));          passwordLabel.setText("Password :"); 
+loginPanel.add(passwordLabel, new 
+org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, 30));         loginButton.setBackground(new java.awt.Color(228, 219, 219));         loginButton.setFont(new java.awt.Font("Baskerville Old Face", 1, 18));          loginButton.setText("Log In");         loginButton.addActionListener(new java.awt.event.ActionListener() {             public void actionPerformed(java.awt.event.ActionEvent evt) {                 loginButtonActionPerformed(evt); 
+            } 
+        }); 
+        loginPanel.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 
+260, 90, 30));         passwordField.addActionListener(new java.awt.event.ActionListener() {             public void actionPerformed(java.awt.event.ActionEvent evt) {                 passwordFieldActionPerformed(evt); 
+            } 
+        }); 
+        loginPanel.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 
+200, 220, 30));         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4.png")));          loginPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 
+360, 250));         jLabel2.setIcon(new javax.swing.ImageIcon("D:\\5th sem\\MP Pics\\6.png.jpg"));          loginPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 
+870, 360));         jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 36));  jLabel3.setText("FOOD DONATION PLATFORM");         loginPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, 
+-1));         getContentPane().add(loginPanel, new 
+org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 580));         loginPanel.getAccessibleContext().setAccessibleName(""); 
+        pack(); 
+    }  
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     if (userNameField.getText().equalsIgnoreCase("aishwarya")) {             JOptionPane.showMessageDialog(this, "Access granted"); 
+            this.dispose(); 
+            MainMenu mainMenu = new MainMenu();             mainMenu.setVisible(true); 
+        } else { 
+            userNameField.setText("");             passwordField.setText(""); 
+            JOptionPane.showMessageDialog(this, userNameField.getText() + " Access Denied"); 
+        } 
+    }                                            
+    private void userNameFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    }                                              
+ 
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    }                                              
+    public static void main(String args[]) { 
+        try { 
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {                 if ("Nimbus".equals(info.getName())) {                     javax.swing.UIManager.setLookAndFeel(info.getClassName()); 
+                    break; 
+                } 
+            } 
+        } catch (ClassNotFoundException ex) 
+{            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.S EVERE, null, ex); 
+        } catch (InstantiationException ex) 
+{            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.S EVERE, null, ex); 
+        } catch (IllegalAccessException ex) 
+{            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.S EVERE, null, ex); 
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) 
+{           java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.S EVERE, null, ex); 
+        } 
+        java.awt.EventQueue.invokeLater(() -> {             new Login().setVisible(true); 
+        }); 
+    }                  
+    private javax.swing.JLabel jLabel1;     private javax.swing.JLabel jLabel2;     private javax.swing.JLabel jLabel3;     private javax.swing.JButton loginButton;     private javax.swing.JPanel loginPanel;     private javax.swing.JPasswordField passwordField;     private javax.swing.JLabel passwordLabel;     private javax.swing.JTextField userNameField;     private javax.swing.JLabel userNameLabel;                   
+} 
